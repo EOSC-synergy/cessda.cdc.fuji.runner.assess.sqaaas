@@ -1,0 +1,58 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/2.0.1
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/cessda/cessda.cdc.fuji.runner:
+      branch: main
+      repo: https://github.com/cessda/cessda.cdc.fuji.runner
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/cessda/cessda.cdc.fuji.runner git:
+        commands:
+        - /usr/bin/env sh .sqa/script.goopy-lemon-wildebeest.sh
+        container: qc.acc_hazy-cinnamon-echidna
+  QC.Doc:
+    repos:
+      github.com/cessda/cessda.cdc.fuji.runner find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.baggy-chestnut-owl.sh
+        container: qc.doc_hilly-beige-saola
+      github.com/cessda/cessda.cdc.fuji.runner git:
+        commands:
+        - /usr/bin/env sh .sqa/script.skinny-indigo-fox.sh
+        container: qc.doc_hilly-ruby-tortoise
+      github.com/cessda/cessda.cdc.fuji.runner markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.lousy-malachite-spoonbill.sh
+        container: qc.doc_blurry-linen-squirt
+  QC.Lic:
+    repos:
+      github.com/cessda/cessda.cdc.fuji.runner licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.breezy-malachite-goat.sh
+        container: qc.lic_silly-amethyst-hornet
+  QC.Met:
+    repos:
+      github.com/cessda/cessda.cdc.fuji.runner cff-converter-python:
+        commands:
+        - /usr/bin/env sh .sqa/script.sleazy-mauve-donkey.sh
+        container: qc.met_fuzzy-ultramarine-jackal
+  QC.Sty:
+    repos:
+      github.com/cessda/cessda.cdc.fuji.runner jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.cranky-olive-serval.sh
+        container: qc.sty_wiggy-azure-duck
+  QC.Ver:
+    repos:
+      github.com/cessda/cessda.cdc.fuji.runner get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.queasy-orange-squid.sh
+        container: qc.ver_lovely-apricot-newt
+timeout: 5400
