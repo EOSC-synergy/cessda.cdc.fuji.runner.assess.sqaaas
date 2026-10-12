@@ -5,5 +5,5 @@
 
 (
 cd github.com/cessda/cessda.cdc.fuji.runner &&
-    mdl --json .
+    git rev-parse --is-inside-work-tree 
 )

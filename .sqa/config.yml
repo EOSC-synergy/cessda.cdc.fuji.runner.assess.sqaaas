@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/2.0.1
+      branch: fix/updatego
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/cessda/cessda.cdc.fuji.runner:
       branch: main
@@ -15,44 +15,44 @@ sqa_criteria:
     repos:
       github.com/cessda/cessda.cdc.fuji.runner git:
         commands:
-        - /usr/bin/env sh .sqa/script.goopy-lemon-wildebeest.sh
-        container: qc.acc_hazy-cinnamon-echidna
+        - /usr/bin/env sh .sqa/script.dusk_reflective_spren.sh
+        container: qc.acc_lemon_fearless_kirin
   QC.Doc:
     repos:
       github.com/cessda/cessda.cdc.fuji.runner find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.baggy-chestnut-owl.sh
-        container: qc.doc_hilly-beige-saola
+        - /usr/bin/env sh .sqa/script.saffron_humorous_frog.sh
+        container: qc.doc_cobalt_sad_otter
       github.com/cessda/cessda.cdc.fuji.runner git:
         commands:
-        - /usr/bin/env sh .sqa/script.skinny-indigo-fox.sh
-        container: qc.doc_hilly-ruby-tortoise
+        - /usr/bin/env sh .sqa/script.wheat_adventurous_lionfish.sh
+        container: qc.doc_pearl_clever_seahorse
       github.com/cessda/cessda.cdc.fuji.runner markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.lousy-malachite-spoonbill.sh
-        container: qc.doc_blurry-linen-squirt
+        - /usr/bin/env sh .sqa/script.cornflower_restless_bison.sh
+        container: qc.doc_flax_plucky_antelope
   QC.Lic:
     repos:
       github.com/cessda/cessda.cdc.fuji.runner licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.breezy-malachite-goat.sh
-        container: qc.lic_silly-amethyst-hornet
+        - /usr/bin/env sh .sqa/script.teal_cheerful_gerbil.sh
+        container: qc.lic_rosewater_visionary_platypus
   QC.Met:
     repos:
       github.com/cessda/cessda.cdc.fuji.runner cff-converter-python:
         commands:
-        - /usr/bin/env sh .sqa/script.sleazy-mauve-donkey.sh
-        container: qc.met_fuzzy-ultramarine-jackal
+        - /usr/bin/env sh .sqa/script.espresso_inspired_narwhal.sh
+        container: qc.met_peony_ambitious_iguana
   QC.Sty:
     repos:
       github.com/cessda/cessda.cdc.fuji.runner jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.cranky-olive-serval.sh
-        container: qc.sty_wiggy-azure-duck
+        - /usr/bin/env sh .sqa/script.mulberry_audacious_boar.sh
+        container: qc.sty_emerald_loving_lobster
   QC.Ver:
     repos:
       github.com/cessda/cessda.cdc.fuji.runner get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.queasy-orange-squid.sh
-        container: qc.ver_lovely-apricot-newt
+        - /usr/bin/env sh .sqa/script.walnut_whimsical_hamster.sh
+        container: qc.ver_cosmos_foolish_ocelot
 timeout: 5400
